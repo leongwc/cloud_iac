@@ -51,9 +51,10 @@ resource "aws_instance" "app_server" {
   #Ubuntu AMI
   ami           = "ami-02ee763250491e04a"
   instance_type = "t2.micro"
-  subnet_id = aws_subnet.main.id
+  subnet_id     = aws_subnet.main.id
 
   tags = {
     Name = "AppServerInstance"
   }
+  monitoring = true
 }
